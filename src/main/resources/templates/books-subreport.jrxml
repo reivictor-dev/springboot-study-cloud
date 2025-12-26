@@ -1,0 +1,84 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="books-subreport" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a9248dd3-1eac-4e3d-a401-31b9c17cd31d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="Ym9va3MgQVMgLDE1LDE1LDJkY2RmYzEwLTY0NDUtNGM1MC1hZTM0LTQ0MDNhYjJhMWZiNDtwZXJz&#xa;b25fYm9va3MgLDExMiwxNSw0MGYwYzMzZS0xYTQxLTRkMzItYjJmYi1mMWY1YzMwYmMwNTc7"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQLConn"/>
+	<style name="zebraStyle">
+		<conditionalStyle mode="Opaque" forecolor="#FFFFFF" backcolor="#E0E0E0">
+			<conditionExpression><![CDATA[$V{REPORT_COUNT} % 2 == 0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<parameter name="PERSON_ID" class="java.lang.String"/>
+	<parameter name="SUB_REPORT_DATA_SOURCE" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="books"/>
+	</field>
+	<field name="author" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="author"/>
+		<property name="com.jaspersoft.studio.field.label" value="author"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="books"/>
+	</field>
+	<field name="launchDate" class="java.util.Date">
+		<property name="com.jaspersoft.studio.field.name" value="launch_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="launchDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="books"/>
+	</field>
+	<field name="price" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="price"/>
+		<property name="com.jaspersoft.studio.field.label" value="price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="books"/>
+	</field>
+	<field name="title" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="title"/>
+		<property name="com.jaspersoft.studio.field.label" value="title"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="books"/>
+	</field>
+	<background splitType="Stretch"/>
+	<columnHeader height="30" splitType="Stretch">
+		<element kind="staticText" uuid="12a5ba21-5e4c-4e8f-9e43-9ae6ed95a78c" mode="Opaque" x="0" y="0" width="30" height="30" forecolor="#FFFFFF" backcolor="#3E688D" fontName="Arial" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Code]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c18883a4-8040-4082-96f6-8fbc14468a5b"/>
+		</element>
+		<element kind="staticText" uuid="f81c23c0-11a8-44d1-8c27-64cacc2b140c" mode="Opaque" x="250" y="0" width="120" height="30" forecolor="#FFFFFF" backcolor="#3E688D" fontName="Arial" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Author]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="008e4d01-ee19-4e49-a8e5-bdf90fc67028"/>
+		</element>
+		<element kind="staticText" uuid="21733f44-48c9-4edb-bda8-66df05cbed34" mode="Opaque" x="370" y="0" width="110" height="30" forecolor="#FFFFFF" backcolor="#3E688D" fontName="Arial" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Date]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4b36f110-ad90-43b6-9616-b368ff4370cf"/>
+		</element>
+		<element kind="staticText" uuid="a9cb20e7-6c0a-4e1f-b834-08ad52354f9d" mode="Opaque" x="480" y="0" width="50" height="30" forecolor="#FFFFFF" backcolor="#3E688D" fontName="Arial" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Price]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29645a68-81d9-434f-a5bc-dbdcf310ff62"/>
+		</element>
+		<element kind="staticText" uuid="ac391d3c-ef64-4b5a-9564-70bef7e3650e" mode="Opaque" x="30" y="0" width="220" height="30" forecolor="#FFFFFF" backcolor="#3E688D" fontName="Arial" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Title]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f311d759-9d45-412c-beb9-a685a90cd5b1"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<element kind="textField" uuid="d29dc5e0-9d67-4dd6-9b0a-57157ba0cdfb" x="0" y="0" width="30" height="40" forecolor="#030000" fontName="Arial" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle" style="zebraStyle">
+				<expression><![CDATA[$F{id}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c18883a4-8040-4082-96f6-8fbc14468a5b"/>
+			</element>
+			<element kind="textField" uuid="8344d1a0-e95e-42a0-9660-58de8e814149" x="250" y="0" width="120" height="40" forecolor="#030000" fontName="Arial" fontSize="12.0" vTextAlign="Middle" style="zebraStyle">
+				<expression><![CDATA[$F{author}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="008e4d01-ee19-4e49-a8e5-bdf90fc67028"/>
+			</element>
+			<element kind="textField" uuid="be90d3ab-706f-42c6-8ab4-701adea05c11" x="370" y="0" width="110" height="40" forecolor="#030000" fontName="Arial" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle" style="zebraStyle">
+				<expression><![CDATA[$F{launchDate}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4b36f110-ad90-43b6-9616-b368ff4370cf"/>
+			</element>
+			<element kind="textField" uuid="ecfe0b7e-9a4d-415f-b606-31680c728066" x="480" y="0" width="50" height="40" forecolor="#030000" fontName="Arial" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle" style="zebraStyle">
+				<expression><![CDATA[$F{price}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29645a68-81d9-434f-a5bc-dbdcf310ff62"/>
+			</element>
+			<element kind="textField" uuid="d06c032b-b99b-44bf-947a-8d42f8ac1ec6" x="30" y="0" width="220" height="40" forecolor="#030000" fontName="Arial" fontSize="12.0" vTextAlign="Middle" style="zebraStyle">
+				<expression><![CDATA[$F{title}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f311d759-9d45-412c-beb9-a685a90cd5b1"/>
+			</element>
+		</band>
+	</detail>
+</jasperReport>

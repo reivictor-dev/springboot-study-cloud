@@ -1,0 +1,53 @@
+server:
+  port: 80
+cors:
+    originPatterns: http://localhost:8080,http://localhost:3000
+file:
+    upload-dir: /OneDriveOut/study-spring/base-app-study/upload-dir
+security:
+    jwt:
+        token:
+            secret-key: 22vh44
+            expired-length: 3600000
+email:
+    subject: "Default Subject"
+    message: "Default Message"
+spring:
+    application:
+        name:
+            study-spring
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver 
+        url: jdbc:mysql://localhost:3306/rest_with_spring_study?useTimezone=true&serverTimezone=UTC
+        username: root
+        password: 12345678910dh
+    jpa:
+        hibernate:
+            ddl-auto: none
+        properties:
+            hibernate: 
+        show-sql: false
+        open-in-view: false
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: ${EMAIL.USERNAME}
+        password: ${EMAIL.PASSWORD}
+        properties:
+            mail.smtp.auth: true
+            mail.smtp.starttls.enabled: true
+            mail.smtp.starttls.required: true
+    main:
+        allow-bean-definition-overriding: true
+    servlet:
+        multipart:
+          enabled: true
+          file-size-threshold: 2KB
+          max-file-size: 200MB
+          max-request-size: 215MB
+logging:
+  level:
+    root: info
+    #net.sf.jasperreports.engine.*: TRACE 
+        # '[com.study.study_spring]': warn
+

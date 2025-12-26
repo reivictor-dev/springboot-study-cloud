@@ -1,0 +1,8 @@
+*.txt
+*.csv
+*.xlsx
+*.pdf
+*.txt
+target
+upload-dir
+nbproject
