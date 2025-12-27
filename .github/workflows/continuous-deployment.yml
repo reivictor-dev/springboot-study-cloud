@@ -27,11 +27,11 @@ jobs:
         cache: maven
 
     - name: Build Application .jar
-      working-directory: ./study-spring/base-app-study
+      working-directory: ./
       run: mvn clean package
 
     - name: Docker compose build
-      working-directory: ./study-spring
+      working-directory: ./
       run: docker compose build
 
     - name: push to Docker HUB container Registry
