@@ -1,7 +1,7 @@
 cors:
     originPatterns: http://localhost:8080,http://localhost:3000
 file:
-    upload-dir: /OneDriveOut/study-spring/base-app-study/upload-dir
+    upload-dir: /home/runner/work/springboot-study-cloud/upload-dir
 security:
     jwt:
         token:
