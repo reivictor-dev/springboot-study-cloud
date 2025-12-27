@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
     - name: Setup Java
-    - uses: actions/setup-java@v5
+      uses: actions/setup-java@v5
       with:
         java-version: '17'
         distribution: 'temurin'
@@ -37,6 +37,6 @@ jobs:
     - name: push to Docker HUB container Registry
       run: |
         docker tag ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-study:latest ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-study:${{ github.run_id}}
-        
+
         docker push ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-study:latest
         docker push ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-study:${{ github.run_id}}
