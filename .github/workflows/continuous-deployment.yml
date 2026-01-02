@@ -23,7 +23,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: '21'
-        distribution: 'adopt'
+        distribution: 'temurin'
         cache: maven
 
     - name: Build Application .jar
@@ -32,9 +32,18 @@ jobs:
     - name: Docker compose build
       run: docker compose build
 
+    - name: Wait for application
+      run: |
+        for i in {1..20}; do
+          if curl -f http://localhost:8080/actuator/health; then
+            exit 0
+          fi
+          sleep 5
+        done
+        exit 1
+
     - name: push to Docker HUB container Registry
       run: |
         docker tag ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-study:latest ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-study:${{ github.run_id}}
-
         docker push ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-study:latest
         docker push ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-study:${{ github.run_id}}
