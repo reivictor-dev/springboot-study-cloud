@@ -32,9 +32,6 @@ jobs:
     - name: Docker compose build
       run: docker compose build
 
-    - name: Start containers
-      run: docker compose up -d
-
     - name: push to Docker HUB container Registry
       run: |
         docker tag ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-study:latest ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-study:${{ github.run_id}}

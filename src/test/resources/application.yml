@@ -1,3 +1,5 @@
+server:
+  port: 8888
 cors:
     originPatterns: http://localhost:8080,http://localhost:3000
 file:
@@ -10,8 +12,6 @@ security:
 email:
     subject: "Default Subject"
     message: "Default Message"
-server:
-  port: 8888
 spring:
     application:
         name:
@@ -43,4 +43,10 @@ spring:
 logging:
   level:
         root: warn
+spring-doc:
+  paths-to-match:
+    - /auth/**
+    - /api/**/v1/**
+  swagger-ui:
+    use-root-path: true
     

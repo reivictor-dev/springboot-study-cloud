@@ -55,7 +55,7 @@ public class BookControllerJsonTest extends AbstractIntegrationTest{
 
         token = given()
             .basePath("/auth/signin")
-             .port(TestConfigs.SERVER_PORT)
+            .port(TestConfigs.SERVER_PORT)
             .contentType(MediaType.APPLICATION_JSON_VALUE)
             .body(credentials)
 			.when()
