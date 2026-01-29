@@ -18,9 +18,10 @@ spring:
             study-spring
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver 
-        url: jdbc:mysql://localhost:3306/rest_with_spring_study?useTimezone=true&serverTimezone=UTC
+        url: ${JDBC_URL}
+        #url: jdbc:mysql://studyspring-db-server.cv4wuyayu04r.eu-north-1.rds.amazonaws.com/rest_with_spring_study?useTimezone=true&serverTimezone=UTC
         username: root
-        password: 12345678910dh
+        password: 12345678910dH*
     jpa:
         hibernate:
             ddl-auto: none
